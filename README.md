@@ -59,3 +59,24 @@ $obj->getAllow($search = null) { return (isset($search)) ? $this->allow[$search]
 $obj->getForbidAtEnd($search = null) { return (isset($search)) ? $this->forbidAtEnd[$search] : $this->forbidAtEnd; }
 $obj->getExtension() { return $this->extension; }
 ```
+Laravel 4 Installation
+----------------
+To include this Class into laravel simply add the ```helpers/```-Folder to the ```app/```-Directory and add the following line to the ```composer.json```-File.
+```json
+	"autoload": {
+		"classmap": [
+			"app/commands",
+			"app/controllers",
+			"app/models",
+			"app/database/migrations",
+			"app/database/seeds",
+			"app/tests/TestCase.php",
+			
+			// Add this line:
+			"app/helpers"
+		]
+	},
+
+```
+
+You might need to run ```php artisan dump-autoload``` to regenerate the autoloader.
