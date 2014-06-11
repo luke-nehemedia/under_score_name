@@ -49,16 +49,17 @@ $obj->addAllow($char);
 $obj->addForbidAtEnd($char);
 
 // Setter-Functions
-$obj->setFilename($filename) { $this->filename = $filename; }
-$obj->setExtension($extension) { $this->extension = $extension; }
+$obj->setFilename($filename);
+$obj->setExtension($extension);
 
 // Getter-Functions
-$obj->getFilename() { return $this->filename; }
-$obj->getReplace($search = null) { return (isset($search)) ? $this->replace[$search] : $this->replace; }
-$obj->getAllow($search = null) { return (isset($search)) ? $this->allow[$search] : $this->allow; }
-$obj->getForbidAtEnd($search = null) { return (isset($search)) ? $this->forbidAtEnd[$search] : $this->forbidAtEnd; }
-$obj->getExtension() { return $this->extension; }
+$obj->getFilename();
+$obj->getReplace($search = null);  // returns complete array if no parameter given
+$obj->getAllow($search = null); // returns complete array if no parameter given
+$obj->getForbidAtEnd($search = null); // returns complete array if no parameter given
+$obj->getExtension();
 ```
+
 Laravel 4 Installation
 ----------------
 To include this Class into laravel simply add the ```helpers/```-Folder to the ```app/```-Directory and add the following line to the ```composer.json```-File.
