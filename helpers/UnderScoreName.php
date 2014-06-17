@@ -6,10 +6,10 @@
   *	This class generates under_score_(file)_names from a given string.
   *	It can also be used to filter strings according to specific rules.
   *
-  *	Last Update: 2014-06-11
+  *	Last Update: 2014-06-17
   *
   * @author  Lucas Bares <luke@nehemedia.de>
-  *	@version 1.0.1
+  *	@version 1.0.2
   *	@package helpers
   *	@see http://luke.nehemedia.de/2014/06/11/laravel-under_score_name/ Blog Entry
   *	@see https://github.com/theLuke90/under_score_name Git-Repository
@@ -69,26 +69,26 @@ class UnderScoreName {
 
 		// Split and walk string
 		$array = str_split(trim($filename));
-		$camelCase = '';
+		$underScoreName = '';
 		foreach ($array as $char) {
 			if(array_key_exists($char, $this->replace) !== false){
-				$camelCase .= $this->replace[$char];
+				$underScoreName .= $this->replace[$char];
 			}elseif(array_search($char, $this->allow) !== false){
-				$camelCase .= $char;
+				$underScoreName .= $char;
 			}
 		}
 
 		// Remove unwanted chars from the end of the string
-		while(array_search(mb_substr($camelCase, -1), $this->forbidAtEnd)){
-			$camelCase = mb_substr($camelCase, 0, -1);
+		while(array_search(mb_substr($underScoreName, -1), $this->forbidAtEnd)){
+			$underScoreName = mb_substr($underScoreName, 0, -1);
 		}
 
 		// Add extionsion (lowercase)
 		if($extension !== false){
-			$camelCase .= '.' . strtolower($extension);
+			$underScoreName .= '.' . strtolower($extension);
 		}
 
-		return $camelCase;
+		return $underScoreName;
 	}
 
 	/**
