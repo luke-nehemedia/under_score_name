@@ -35,6 +35,7 @@ echo $obj  // Output might be: 2014_So_Author_Name_This_is_my_Filename.jpg
 ```
 
 There are many more ways to extend the functionality.
+Some examples are implemented in the custom-directory with examples in the examples-directory.
 
 API:
 ----------------
