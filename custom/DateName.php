@@ -6,11 +6,15 @@ class DateName extends UnderScoreName {
 	protected $year;
 
 	public function __construct($year, $name, $extension){
-		$this->year = $year;
+		$this->setYear($year);
 		parent::__construct($name,$extension);
 	}
 
 	public function render(){
 		return $this->year.'_'.parent::render();
+	}
+
+	public function setYear($year){
+		$this->year = $year;
 	}
 }
