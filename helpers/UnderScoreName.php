@@ -114,6 +114,11 @@ class UnderScoreName {
 	public function addAllow($char) { $this->allow[] = $char; }
 	public function addForbidAtEnd($char) { $this->forbidAtEnd[] = $char; }
 
+	// Remove-Functions
+	public function removeAllow($char) { unset($this->allow[array_search($char, $this->allow)]); }
+	public function removeReplace($char) { unset($this->replace[$char]); }
+	public function removeForbidAtEnd($char) { unset($this->forbidAtEnd[array_search($char, $this->forbidAtEnd)]); }
+
 	// Setter-Functions
 	public function setFilename($filename) { $this->filename = $filename; }
 	public function setExtension($extension) { $this->extension = $extension; }
