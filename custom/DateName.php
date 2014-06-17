@@ -18,3 +18,5 @@ class DateName extends UnderScoreName {
 		$this->year = $year;
 	}
 }
+
+?>
