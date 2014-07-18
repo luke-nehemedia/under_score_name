@@ -82,3 +82,7 @@ To include this Class into laravel simply add the ```helpers/```-Folder to the `
 ```
 
 You might need to run ```php artisan dump-autoload``` to regenerate the autoloader.
+
+
+
+
